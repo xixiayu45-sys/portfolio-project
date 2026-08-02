@@ -1,0 +1,284 @@
+/* ========== 1. 全局基础：盒模型和复用变量 ========== */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --page-bg: aliceblue;
+    --card-bg: white;
+    --control-bg: azure;
+    --accent-color: rgb(168, 6, 88);
+    --focus-color: #2563eb;
+    --xblue-color: aqua;
+    --radius-sm: 6px;
+    --space-sm: 8px;
+}
+
+/* ========== 2. 页面整体布局 ========== */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: var(--page-bg);
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-bg);
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: var(--radius-sm);
+}
+
+section {
+    margin-top: 5px;
+}
+
+article {
+    padding: 12px;
+    border: 1px solid wheat;
+    border-radius: var(--radius-sm);
+}
+
+/* ========== 3. 通用元素样式 ========== */
+.word {
+    color: var(--accent-color);
+}
+
+button {
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: var(--control-bg);
+    color: blueviolet;
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+button:hover {
+    background-color: chartreuse;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+/* ========== 4. 顶部导航模块 ========== */
+nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--xblue-color);
+    padding: 10px 8px;
+    border-radius: 6px;
+}
+
+nav a:focus-visible,
+nav a:hover {
+    color: var(--xblue-color);
+    background-color: wheat;
+}
+
+/* ========== 5. 作品说明模块 ========== */
+.project-overview {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--card-bg);
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: var(--radius-sm);
+}
+
+.project-overview h3 {
+    color: var(--accent-color);
+}
+
+.overview-list,
+.techs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ========== 6. 技能模块 ========== */
+#pa ul {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+}
+
+#pa li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--control-bg);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+}
+
+/* ========== 7. 项目经历模块 ========== */
+#xm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+#xm h2,
+#projectFilter,
+#projectCount,
+#addProject,
+#editDesc {
+    grid-column: 1 / -1;
+}
+
+#xm article {
+    margin: 0;
+}
+
+#projectFilter {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#addProject {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 240px;
+    gap: 8px;
+}
+
+.project-form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    border: 1px solid #ddd;
+}
+
+.project-title {
+    margin: 0 0 8px;
+    color: var(--accent-color);
+}
+
+.project-desc {
+    line-height: 1.6;
+}
+
+.project-meta,
+.project-techs-text {
+    font-size: 14px;
+}
+
+.tagList {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-tag {
+    background-color: var(--control-bg);
+    border: 1px solid #93c5fd;
+    border-radius: var(--radius-sm);
+    padding: 6px 8px;
+    font-size: 14px;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* ========== 8. 联系表单和反馈提示 ========== */
+.biao {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.biao input {
+    width: 180px;
+}
+
+.sp {
+    color: brown;
+}
+
+.cg {
+    color: aquamarine;
+}
+
+/* ========== 9. 按钮状态和重点模式 ========== */
+.xcard {
+    border-color: greenyellow;
+    background-color: coral;
+}
+
+.secondary-button {
+    background-color: var(--control-bg);
+    color: #2563eb;
+    border: 1px solid #93c5fd;
+}
+
+.danger-button {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.secondary-button:hover {
+    background-color: #dbeafe;
+}
+
+.danger-button:hover {
+    background-color: #fecaca;
+}
+
+/* ========== 10. 移动端适配 ========== */
+@media (max-width: 480px) {
+    body {
+        margin: 0;
+    }
+
+    .card {
+        margin: 12px auto;
+        padding: 16px;
+    }
+
+    nav a {
+        padding: 8px 10px;
+    }
+
+    .biao,
+    #addSkill,
+    #addProject {
+        flex-direction: column;
+    }
+
+    .biao input,
+    #addSkill input,
+    #addProject input,
+    .biao button,
+    #addSkill button,
+    #addProject button {
+        width: 100%;
+        min-height: 40px;
+    }
+}
