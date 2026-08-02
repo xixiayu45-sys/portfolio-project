@@ -94,21 +94,6 @@ https://xixiayu45-sys.github.io/portfolio-project/
 - 首页入口：`index.html`
 - 构建步骤：无
 
-## 面试讲解稿
-
-这个项目是一个原生 HTML/CSS/JavaScript 实现的前端求职主页，用来展示个人信息、技能和项目经历。
-
-页面结构使用语义化 HTML，样式部分使用 Flex/Grid 和响应式布局适配不同屏幕。交互部分使用原生 JavaScript 实现技能管理、项目新增、编辑、删除、筛选和 localStorage 本地保存。
-
-开发过程中，我把项目数据集中放在数组中管理，并通过渲染函数统一更新页面，减少重复 DOM 操作。这个项目可以展示我对 HTML 页面结构、CSS 布局、JavaScript DOM 操作、表单校验和本地存储的基础掌握。
-
-## 当前状态
-
-- 已完成原生 HTML/CSS/JavaScript 版本
-- 已整理公开 GitHub 仓库
-- 已完成 GitHub Pages 线上部署
-- 待补充：真实项目截图
-
 ## 后续优化
 
 - 优化页面配色、间距和移动端细节
