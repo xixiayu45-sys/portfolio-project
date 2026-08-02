@@ -1,130 +1,117 @@
-﻿# 前端求职主页
+# 前端求职主页
+
+一个使用 HTML、CSS 和 JavaScript 制作的个人前端求职主页，用于展示学习状态、前端技能、项目经历和联系方式，并通过原生 JavaScript 实现基础交互功能。
+
+- 在线预览：https://xixiayu45-sys.github.io/portfolio-project/
+- 代码仓库：https://github.com/xixiayu45-sys/portfolio-project
 
 ## 项目简介
-这是一个使用 HTML、CSS 和 JavaScript 制作的个人前端求职主页。
 
-页面用于展示我的学习情况、技能列表、项目经历与联系方式，并通过原生 JavaScript 实现基础交互功能。
+这是一个面向前端求职展示的静态网页项目。页面使用语义化 HTML 组织内容，使用 CSS 完成响应式布局和视觉样式，使用原生 JavaScript 实现技能管理、项目管理、技术栈筛选、留言反馈和本地数据保存。
+
+项目目前已通过 GitHub Pages 部署，可以直接通过线上地址访问页面效果。
 
 ## 简历项目描述
-个人求职主页｜HTML / CSS / JavaScript
 
-- 使用语义化 HTML、Flex/Grid 和响应式样式搭建个人作品展示页，适配桌面端与移动端浏览。
-- 使用原生 JavaScript 实现项目列表渲染、新增、编辑、删除、筛选和本地存储。
-- 整理 README、部署计划和仓库上传说明，保证项目结构、运行方式和发布信息一致。
+**个人前端求职主页 | HTML / CSS / JavaScript**
+
+- 项目地址：https://xixiayu45-sys.github.io/portfolio-project/
+- 代码仓库：https://github.com/xixiayu45-sys/portfolio-project
+- 技术栈：HTML、CSS、JavaScript、DOM、localStorage、Flex、Grid
+
+项目描述：
+
+这是一个面向前端求职展示的个人主页项目，包含个人介绍、技能展示、项目经历、技术栈筛选和留言反馈等模块。项目使用原生 HTML/CSS/JavaScript 独立完成，重点展示基础页面结构、响应式布局、DOM 操作、表单校验和本地数据管理能力。
+
+主要工作：
+
+- 使用语义化 HTML 搭建页面结构，划分作品说明、关于我、技能、项目经历和联系方式等内容模块。
+- 使用 CSS Flex/Grid、卡片样式和响应式布局优化页面排版，使页面在桌面端和移动端都具备较好的可读性。
+- 使用原生 JavaScript 实现技能新增、删除、重置，以及项目新增、编辑、删除和按技术栈筛选。
+- 使用 localStorage 保存技能和项目数据，使用户刷新页面后仍能保留本地修改。
+- 使用 GitHub 管理项目代码，并通过 GitHub Pages 部署线上预览地址，完成从本地项目到公开作品的交付流程。
 
 ## 主要功能
-- 展示个人学习状态和前端技能
-- 支持技能新增、删除和重置
+
+- 展示个人学习状态、求职方向和前端技能
+- 支持技能新增、删除和恢复默认技能
 - 支持项目新增、编辑和删除
-- 支持按技术栈筛选项目
-- 支持留言表单填写和反馈提示
-- 使用 localStorage 保存本地项目和技能数据
+- 支持按技术栈筛选项目列表
+- 支持留言表单校验和提交反馈
+- 支持重点模式切换
+- 使用 localStorage 保存本地技能和项目数据
 
 ## 使用技术
-- HTML：负责页面结构
-- CSS：负责页面样式和响应式布局
-- JavaScript：负责页面交互逻辑
-- DOM：负责获取页面元素并动态更新内容
-- localStorage：负责在浏览器本地保存数据
-- Flex/Grid：负责导航、技能列表和项目区域布局
 
-## 文件结构
-- `index.html`：页面结构
-- `style.css`：页面样式
-- `script.js`：页面交互逻辑
-- `README.md`：项目说明文档
+- HTML：负责页面结构和内容组织
+- CSS：负责页面样式、卡片布局、响应式适配和交互状态
+- JavaScript：负责页面交互、表单处理、数据渲染和状态更新
+- DOM：负责获取页面元素、创建元素并更新页面内容
+- localStorage：负责在浏览器本地保存技能和项目数据
+- Flex / Grid：负责导航、技能列表和项目卡片区域布局
 
 ## 项目亮点
-- 使用原生 JavaScript 实现项目新增、编辑、删除和技术栈筛选
-- 使用 localStorage 保存技能和项目数据，刷新页面后仍能保留用户修改
-- 使用 DOM 动态渲染项目卡片、技术标签和操作按钮
-- 使用表单校验和反馈文案提升基础交互体验
+
+- 使用原生 JavaScript 完成项目数据的增删改查和筛选流程
+- 将技能数据和项目数据集中管理，再通过渲染函数统一更新页面
+- 使用 localStorage 实现本地持久化，提升静态页面的交互完整度
+- 使用表单校验、反馈文案和删除确认，完善基础用户体验
+- 使用 GitHub Pages 完成静态项目部署，具备可访问的线上预览地址
+
+## 文件结构
+
+```txt
+portfolio-project
+├─ README.md
+├─ index.html
+├─ style.css
+└─ script.js
+```
+
+- `index.html`：页面结构和内容
+- `style.css`：页面样式和响应式布局
+- `script.js`：页面交互逻辑和数据处理
+- `README.md`：项目说明文档
 
 ## 运行方式
-用浏览器打开 `index.html` 文件即可运行。
 
-## 部署计划
-- 准备 GitHub 仓库，用于保存项目代码
-- 补充项目截图，展示首页、项目列表和表单交互效果
-- 计划使用静态托管平台部署项目
-- 部署完成后补充线上访问地址
+方式一：打开线上预览地址：
 
-## 部署前检查清单
-- [ ] 确认当前入口文件是 `index.html`，适合静态托管默认首页
-- [ ] 确认 `style.css` 和 `script.js` 能正常加载
-- [ ] 准备首页、项目列表和表单交互状态截图
-- [ ] 检查 README 没有写未完成能力或虚假线上地址
-- [ ] 检查页面没有空链接、占位链接或临时调试输出
-- [ ] 确认 `script.js` 语法检查通过
+```txt
+https://xixiayu45-sys.github.io/portfolio-project/
+```
 
-## 仓库准备说明
-- 仓库用途：保存原生 HTML/CSS/JavaScript 求职主页代码
-- 项目目录：`portfolio-project`
-- 当前入口文件：`index.html`
-- 核心文件：`index.html`、`style.css`、`script.js`、`README.md`
-- 构建方式：无构建步骤，直接作为静态网页运行
+方式二：在本地直接用浏览器打开 `index.html`。
 
-## 部署方案选择
-当前项目优先考虑静态托管方案。部署前先准备 GitHub 仓库；如果使用 GitHub Pages，当前首页入口已是 `index.html`；如果使用 Netlify 或 Vercel，需要确认发布目录为当前静态文件所在目录，且不填写构建命令。
+本项目是原生静态网页，不需要安装依赖，也不需要运行构建命令。
 
-## 仓库上传前检查
-- [ ] 文件结构与 README 描述一致
-- [ ] 项目入口统一为 `index.html`
-- [ ] 页面使用相对路径加载 `style.css` 和 `script.js`
-- [ ] 没有旧文件名、空链接、占位邮箱或临时调试输出
-- [ ] 没有引用不存在的截图或线上地址
+## 部署说明
 
-## GitHub 上传说明
-- 上传范围：上传 `portfolio-project` 项目文件
-- 仓库用途：保存前端求职主页代码和 README 项目说明
-- 构建方式：无构建步骤，直接作为静态网页运行
-- 建议提交信息：`Add portfolio project`
-- 远程仓库地址：待补充
-- 线上预览地址：待部署完成后补充
-- 部署方式：优先考虑 GitHub Pages，也可以选择 Netlify 或 Vercel 静态托管
-git init
-git add .
-git commit -m "Add portfolio project"
-git branch -M main
-git remote add origin <你的 GitHub 仓库地址>
-git push -u origin main
+项目已部署到 GitHub Pages。
 
-## 项目发布信息
-- 项目状态：本地静态项目，准备上传 GitHub 并部署
-- 代码仓库：待补充
-- 线上预览：部署完成后补充
-- 运行方式：直接打开 `index.html`
-- 构建步骤：无，原生 HTML/CSS/JavaScript 项目
-
-## 项目截图计划
-- 首页整体：展示个人信息、导航、技能和项目入口
-- 项目列表：展示动态渲染的项目卡片和技术标签
-- 筛选功能：展示按技术栈筛选后的项目结果
-- 项目表单：展示新增或编辑项目的输入区域
-- 本地保存：展示刷新页面后项目数据仍然保留
+- 发布来源：`main` 分支
+- 发布目录：仓库根目录 `/root`
+- 首页入口：`index.html`
+- 构建步骤：无
 
 ## 面试讲解稿
+
 这个项目是一个原生 HTML/CSS/JavaScript 实现的前端求职主页，用来展示个人信息、技能和项目经历。
-页面结构使用语义化 HTML，样式部分使用 Flex/Grid 和响应式布局适配不同屏幕。
-交互部分使用原生 JavaScript 实现项目新增、编辑、删除、筛选和 localStorage 本地保存。
-开发过程中我把项目数据集中管理，并通过渲染函数统一更新页面，减少重复 DOM 代码。
-后续计划是部署线上预览地址，并基于这个原生版本再做 Vue 重构。
 
-## 最终 QA 清单
-- [ ] 核心文件存在：`index.html`、`style.css`、`script.js`、`README.md`
-- [ ] 页面能直接通过 `index.html` 打开
-- [ ] CSS 和 JavaScript 使用相对路径加载
-- [ ] 项目新增、编辑、删除、筛选和本地保存功能可用
-- [ ] README 描述与当前真实功能一致
-- [ ] 没有虚假仓库地址、虚假线上地址或不存在的截图引用
-- [ ] 没有临时调试输出、空链接或本机绝对路径
+页面结构使用语义化 HTML，样式部分使用 Flex/Grid 和响应式布局适配不同屏幕。交互部分使用原生 JavaScript 实现技能管理、项目新增、编辑、删除、筛选和 localStorage 本地保存。
 
-## 交付状态
-- 当前状态：原生 HTML/CSS/JavaScript 版本已完成本地整理
-- 待补充：GitHub 仓库地址、线上预览地址、真实项目截图
-- 下一步：上传 GitHub 后补充仓库地址，部署完成后补充线上预览地址
+开发过程中，我把项目数据集中放在数组中管理，并通过渲染函数统一更新页面，减少重复 DOM 操作。这个项目可以展示我对 HTML 页面结构、CSS 布局、JavaScript DOM 操作、表单校验和本地存储的基础掌握。
+
+## 当前状态
+
+- 已完成原生 HTML/CSS/JavaScript 版本
+- 已整理公开 GitHub 仓库
+- 已完成 GitHub Pages 线上部署
+- 待补充：真实项目截图
 
 ## 后续优化
-- 继续优化页面配色和间距
-- 补充项目截图
-- 增加更完整的项目介绍文案
+
+- 优化页面配色、间距和移动端细节
+- 补充项目截图，展示首页、项目列表、筛选和表单交互效果
+- 基于当前原生版本继续使用 Vue 3 + Vite 进行重构
+- 后续增加 Node.js / Express 后端接口，将本地保存升级为前后端交互版本
