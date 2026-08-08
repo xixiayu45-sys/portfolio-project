@@ -1,102 +1,109 @@
 # 前端求职主页
 
-一个使用 HTML、CSS 和 JavaScript 制作的个人前端求职主页，用于展示学习状态、前端技能、项目经历和联系方式，并通过原生 JavaScript 实现基础交互功能。
+这是一个使用 HTML、CSS 和原生 JavaScript 开发的个人前端求职主页，用于展示个人介绍、专业技能、项目经历、学习状态和联系方式。
 
-- 在线预览：https://xixiayu45-sys.github.io/portfolio-project/
-- 代码仓库：https://github.com/xixiayu45-sys/portfolio-project
+项目通过原生 JavaScript 实现技能管理、项目管理、技术栈筛选、留言反馈和本地数据保存，适合作为前端学习阶段的个人作品展示项目。
 
-## 项目简介
+## 在线预览
 
-这是一个面向前端求职展示的静态网页项目。页面使用语义化 HTML 组织内容，使用 CSS 完成响应式布局和视觉样式，使用原生 JavaScript 实现技能管理、项目管理、技术栈筛选、留言反馈和本地数据保存。
+在线访问：https://xixiayu45-sys.github.io/portfolio-project/
 
-项目目前已通过 GitHub Pages 部署，可以直接通过线上地址访问页面效果。
+## 代码仓库
+
+GitHub 仓库：https://github.com/xixiayu45-sys/portfolio-project
+
+## 项目功能
+
+- 个人求职主页展示
+- 个人介绍与学习状态展示
+- 前端技能列表展示
+- 技能新增、删除和恢复默认
+- 项目经历展示
+- 项目新增、编辑、删除
+- 按技术栈筛选项目
+- 留言表单校验与提交反馈
+- 重点模式切换
+- 使用 localStorage 保存本地数据
+
+## 技术栈
+
+- HTML5
+- CSS3
+- JavaScript
+- DOM
+- localStorage
+- Flex
+- CSS Grid
+- Git
+- GitHub Pages
+
+## 项目结构
+
+```text
+portfolio-project
+├── README.md
+├── index.html
+├── style.css
+└── script.js
+```
+
+## 本地运行
+
+本项目是原生静态网页，不需要安装依赖，也不需要运行构建命令。
+
+方式一：打开线上预览地址：
+
+```text
+https://xixiayu45-sys.github.io/portfolio-project/
+```
+
+方式二：在本地直接用浏览器打开：
+
+```text
+index.html
+```
 
 ## 简历项目描述
 
 **个人前端求职主页 | HTML / CSS / JavaScript**
 
-- 项目地址：https://xixiayu45-sys.github.io/portfolio-project/
-- 代码仓库：https://github.com/xixiayu45-sys/portfolio-project
-- 技术栈：HTML、CSS、JavaScript、DOM、localStorage、Flex、Grid
+项目地址：https://xixiayu45-sys.github.io/portfolio-project/  
+代码仓库：https://github.com/xixiayu45-sys/portfolio-project
 
-项目描述：
+这是一个面向前端求职展示的个人主页项目，包含个人介绍、技能展示、项目经历、联系方式和留言反馈等模块。项目使用原生 HTML、CSS 和 JavaScript 独立完成，重点展示页面结构搭建、响应式布局、DOM 操作、表单校验和本地数据管理能力。
 
-这是一个面向前端求职展示的个人主页项目，包含个人介绍、技能展示、项目经历、技术栈筛选和留言反馈等模块。项目使用原生 HTML/CSS/JavaScript 独立完成，重点展示基础页面结构、响应式布局、DOM 操作、表单校验和本地数据管理能力。
+## 技术实现
 
-主要工作：
+- 使用语义化 HTML 搭建页面结构，划分个人介绍、技能展示、项目经历、联系方式和留言反馈等内容模块。
 
-- 使用语义化 HTML 搭建页面结构，划分作品说明、关于我、技能、项目经历和联系方式等内容模块。
-- 使用 CSS Flex/Grid、卡片样式和响应式布局优化页面排版，使页面在桌面端和移动端都具备较好的可读性。
-- 使用原生 JavaScript 实现技能新增、删除、重置，以及项目新增、编辑、删除和按技术栈筛选。
-- 使用 localStorage 保存技能和项目数据，使用户刷新页面后仍能保留本地修改。
-- 使用 GitHub 管理项目代码，并通过 GitHub Pages 部署线上预览地址，完成从本地项目到公开作品的交付流程。
+- 使用 CSS Flex、CSS Grid 和媒体查询完成页面布局，实现桌面端与移动端的响应式适配。
 
-## 主要功能
+- 使用原生 JavaScript 操作 DOM，实现技能列表渲染、项目列表渲染、按钮交互和页面状态更新。
 
-- 展示个人学习状态、求职方向和前端技能
-- 支持技能新增、删除和恢复默认技能
-- 支持项目新增、编辑和删除
-- 支持按技术栈筛选项目列表
-- 支持留言表单校验和提交反馈
-- 支持重点模式切换
-- 使用 localStorage 保存本地技能和项目数据
+- 使用数组和对象管理技能数据与项目数据，并通过渲染函数统一更新页面内容，提高代码维护性。
 
-## 使用技术
+- 使用 localStorage 实现技能和项目数据的本地持久化，保证页面刷新后仍能保留用户修改内容。
 
-- HTML：负责页面结构和内容组织
-- CSS：负责页面样式、卡片布局、响应式适配和交互状态
-- JavaScript：负责页面交互、表单处理、数据渲染和状态更新
-- DOM：负责获取页面元素、创建元素并更新页面内容
-- localStorage：负责在浏览器本地保存技能和项目数据
-- Flex / Grid：负责导航、技能列表和项目卡片区域布局
+- 使用表单校验、错误提示、提交反馈和删除确认等交互细节，提升页面可用性。
+
+- 使用 GitHub 管理项目源码，并通过 GitHub Pages 完成静态网页部署，形成可访问的在线作品展示链接。
 
 ## 项目亮点
 
-- 使用原生 JavaScript 完成项目数据的增删改查和筛选流程
-- 将技能数据和项目数据集中管理，再通过渲染函数统一更新页面
-- 使用 localStorage 实现本地持久化，提升静态页面的交互完整度
-- 使用表单校验、反馈文案和删除确认，完善基础用户体验
-- 使用 GitHub Pages 完成静态项目部署，具备可访问的线上预览地址
+- 使用原生 JavaScript 完成项目数据的新增、编辑、删除和筛选流程。
 
-## 文件结构
+- 将页面数据与渲染逻辑进行拆分，降低重复代码，提高项目可维护性。
 
-```txt
-portfolio-project
-├─ README.md
-├─ index.html
-├─ style.css
-└─ script.js
-```
+- 使用 localStorage 实现静态页面的数据保存能力，增强页面交互完整度。
 
-- `index.html`：页面结构和内容
-- `style.css`：页面样式和响应式布局
-- `script.js`：页面交互逻辑和数据处理
-- `README.md`：项目说明文档
+- 使用 Flex 和 CSS Grid 完成技能区、项目卡片和页面模块布局，提升页面展示效果。
 
-## 运行方式
+- 完成从本地开发、GitHub 上传到 GitHub Pages 部署上线的完整流程。
 
-方式一：打开线上预览地址：
+## 项目收获
 
-```txt
-https://xixiayu45-sys.github.io/portfolio-project/
-```
+通过该项目，熟悉了原生前端项目从页面搭建、样式布局、交互开发、数据渲染到线上部署的完整流程。掌握了 HTML 语义化结构、CSS 响应式布局、JavaScript DOM 操作、本地数据存储和 GitHub Pages 部署方法，为后续使用 Vue 3 + Vite 进行项目重构打下了基础。
 
-方式二：在本地直接用浏览器打开 `index.html`。
+## 作者
 
-本项目是原生静态网页，不需要安装依赖，也不需要运行构建命令。
-
-## 部署说明
-
-项目已部署到 GitHub Pages。
-
-- 发布来源：`main` 分支
-- 发布目录：仓库根目录 `/root`
-- 首页入口：`index.html`
-- 构建步骤：无
-
-## 后续优化
-
-- 优化页面配色、间距和移动端细节
-- 补充项目截图，展示首页、项目列表、筛选和表单交互效果
-- 基于当前原生版本继续使用 Vue 3 + Vite 进行重构
-- 后续增加 Node.js / Express 后端接口，将本地保存升级为前后端交互版本
+GitHub：https://github.com/xixiayu45-sys
