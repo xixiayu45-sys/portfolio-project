@@ -6,123 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>我的主页</title>
+    <title>前端求职主页</title>
 </head>
 
 <body>
-    <!-- 页面主容器：集中放置个人主页的全部内容 -->
-    <div class="card">
-        <!-- 顶部模块：展示页面标题和站内导航 -->
-        <header>
-            <h1>我的前端求职简历</h1>
+    <div class="page-shell">
+        <header class="site-header">
+            <div>
+                <p class="eyebrow">Frontend Portfolio</p>
+                <h1>前端求职主页</h1>
+            </div>
             <nav aria-label="主要导航">
                 <a href="#overview">作品说明</a>
                 <a href="#about">关于我</a>
-                <a href="#pa">技能</a>
+                <a href="#pa">技能管理</a>
                 <a href="#xm">项目经历</a>
-                <a href="#email">联系方式</a>
+                <a href="#email">联系我</a>
             </nav>
         </header>
 
-        <!-- 主体模块：按功能拆分为关于我、技能、项目、联系四个区域 -->
         <main>
-            <section id="overview" class="project-overview">
-                <h2 class="word">作品说明</h2>
-                <p>这是一个使用 HTML、CSS 和 JavaScript 制作的前端主页</p>
-                <h3>主要功能</h3>
-                <ul class="overview-list">
-                    <li>技能展示，新增，删除和重置</li>
-                    <li>项目新增，编辑，删除</li>
-                    <li>按技术筛选项目</li>
-                    <li>留言表单填写和反馈</li>
-                    <li>刷新页面后保留项目数据</li>
-                </ul>
-                <h3>使用技术</h3>
-                <ul class="techs-list">
-                    <li>HTML：负责页面结构</li>
-                    <li>CSS：负责页面样式、响应式布局</li>
-                    <li>JavaScript：负责页面交互</li>
-                    <li>DOM：获取页面元素并更新内容</li>
-                    <li>localStorage：保存本地项目数据</li>
-                    <li>Flex/Grid：负责技能列表、导航和项目区域布局</li>
+            <section id="overview" class="hero-section">
+                <div class="hero-content">
+                    <p class="section-kicker">HTML / CSS / JavaScript</p>
+                    <h2>个人前端作品展示与交互练习项目</h2>
+                    <p>
+                        这是一个面向前端求职展示的静态网页项目，包含个人介绍、技能管理、项目管理、技术栈筛选和留言反馈等模块。
+                        项目使用原生 JavaScript 完成交互逻辑，并通过 localStorage 保存本地数据。
+                    </p>
+                    <div class="hero-actions">
+                        <a class="primary-link" href="#xm">查看项目功能</a>
+                        <a class="secondary-link" href="https://github.com/xixiayu45-sys/portfolio-project" target="_blank" rel="noopener">代码仓库</a>
+                    </div>
+                </div>
+                <ul class="summary-list" aria-label="项目能力摘要">
+                    <li><strong>页面布局</strong><span>语义化结构、Flex、Grid、响应式适配</span></li>
+                    <li><strong>交互开发</strong><span>DOM 渲染、表单校验、状态反馈</span></li>
+                    <li><strong>数据管理</strong><span>数组对象处理、本地持久化、筛选逻辑</span></li>
                 </ul>
             </section>
 
-            <!-- 关于我模块：展示个人简介、兴趣和学习目标切换按钮 -->
-            <section id="about">
-                <h2 class="word">关于我</h2>
-
-                <p id="meg">我正在学习 Web</p>
-                <h2 class="word">求职方向</h2>
-                <ul>
-                    <li>前端开发</li>
-                    <li>页面交互</li>
-                    <li>组件化开发</li>
-                </ul>
+            <section id="about" class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">About</p>
+                    <h2>关于我</h2>
+                </div>
+                <p id="meg">
+                    我是一名计算机科学与技术专业学生，当前专注于前端开发方向，熟悉 HTML、CSS、JavaScript 基础，
+                    能够独立完成静态页面搭建、基础交互开发和项目上线部署。
+                </p>
+                <div class="direction-list" aria-label="求职方向">
+                    <span>前端开发</span>
+                    <span>页面交互</span>
+                    <span>响应式布局</span>
+                    <span>组件化学习</span>
+                </div>
                 <button id="bt" type="button">查看学习目标</button>
             </section>
 
-            <!-- 技能模块：技能列表由 JavaScript 动态渲染，支持新增、删除和重置 -->
-            <section id="pa">
-                <h2 class="word">技能</h2>
-                <ul></ul>
-                <form id="addSkill">
+            <section id="pa" class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">Skills</p>
+                    <h2>技能管理</h2>
+                </div>
+                <ul class="skills-list"></ul>
+                <form id="addSkill" class="inline-form">
                     <label for="newSkill">新增技能</label>
-                    <input id="newSkill" type="text" placeholder="例如: React">
+                    <input id="newSkill" type="text" placeholder="例如: Vue">
                     <button type="submit">添加技能</button>
-                    <button id="resetSkill" type="button">恢复默认技能</button>
+                    <button id="resetSkill" type="button" class="ghost-button">恢复默认</button>
                 </form>
-                <p id="textTip" aria-live="polite"></p>
+                <p id="textTip" class="feedback-text" aria-live="polite"></p>
             </section>
 
-            <!-- 项目经历模块：项目卡片由 JavaScript 动态渲染，支持按技术筛选和新增项目 -->
-            <section id="xm">
-                <h2 class="word">项目经历</h2>
-                <form id="projectFilter">
-                    <label for="techFilter">筛选技术</label>
+            <section id="xm" class="content-section project-section">
+                <div class="section-heading">
+                    <p class="section-kicker">Projects</p>
+                    <h2>项目经历</h2>
+                </div>
+                <form id="projectFilter" class="filter-form">
+                    <label for="techFilter">按技术筛选</label>
                     <select id="techFilter"></select>
                 </form>
-                <p id="projectCount" aria-live="polite"></p>
-                <form id="addProject">
+                <p id="projectCount" class="feedback-text" aria-live="polite"></p>
+                <form id="addProject" class="project-form">
                     <fieldset class="project-form-group">
                         <legend>添加或编辑项目</legend>
-                        <label for="projectTitle">项目名称：</label>
+                        <label for="projectTitle">项目名称</label>
                         <input id="projectTitle" placeholder="请输入项目名称">
-                        <label for="projectDesc">项目描述：</label>
+                        <label for="projectDesc">项目描述</label>
                         <input id="projectDesc" placeholder="请输入项目描述">
-                        <label for="projectTechs">技术栈：</label>
-                        <input id="projectTechs" placeholder="请输入技术名称，用英文逗号分隔">
+                        <label for="projectTechs">技术栈</label>
+                        <input id="projectTechs" placeholder="例如: HTML,CSS,JavaScript">
                     </fieldset>
 
-                    <button id="editProjectButton" type="submit">添加项目</button>
-                    <button id="cleanButton" type="button">清空</button>
+                    <div class="form-actions">
+                        <button id="editProjectButton" type="submit">添加项目</button>
+                        <button id="cleanButton" type="button" class="ghost-button">清空</button>
+                    </div>
                 </form>
-                <p id="editDesc" aria-live="polite"></p>
+                <p id="editDesc" class="feedback-text" aria-live="polite"></p>
             </section>
 
-            <!-- 联系方式模块：处理留言表单并显示提交反馈 -->
-            <section id="email">
-                <h2 class="word">联系方式</h2>
-
-                <form class="biao" id="dan">
-                    <label for="nameip">姓名:</label>
+            <section id="email" class="content-section">
+                <div class="section-heading">
+                    <p class="section-kicker">Contact</p>
+                    <h2>联系我</h2>
+                </div>
+                <form class="message-form" id="dan">
+                    <label for="nameip">姓名</label>
                     <input id="nameip" type="text" placeholder="请输入你的姓名">
-                    <label for="messip">留言:</label>
+                    <label for="messip">留言</label>
                     <input id="messip" type="text" placeholder="请输入留言内容">
-                    <button id="tj" type="submit">提交</button>
+                    <button id="tj" type="submit">提交留言</button>
                 </form>
-
-                <a href="mailto:y459452003@163.com">邮箱</a>
-                <p id="th" aria-live="polite"></p>
+                <p class="contact-line">邮箱：<a href="mailto:y459452003@163.com">y459452003@163.com</a></p>
+                <p id="th" class="feedback-text" aria-live="polite"></p>
             </section>
-
-
         </main>
 
-        <!-- 页脚模块：展示学习状态，并提供重点模式切换按钮 -->
-        <footer>
-            <p class="word">持续学习前端开发中</p>
-            <button id="qbt" type="button">切换重点模式</button>
+        <footer class="site-footer">
+            <p>持续学习前端开发，保持项目实践和复盘。</p>
+            <button id="qbt" type="button" class="ghost-button">切换重点模式</button>
         </footer>
     </div>
 </body>
