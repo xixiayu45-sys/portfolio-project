@@ -323,6 +323,30 @@ article {
     font-size: 14px;
 }
 
+.project-links {
+    margin: 12px 0;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 6px 10px;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    color: var(--primary);
+    background: #eff6ff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    color: var(--primary-dark);
+    background: #dbeafe;
+}
+
 .project-form {
     display: grid;
     gap: 12px;

@@ -143,23 +143,28 @@ const defaultProjects = [
         id: "portfolio-page",
         title: "个人前端求职主页",
         desc: "使用语义化 HTML、CSS 和原生 JavaScript 搭建个人求职展示页面，包含个人介绍、技能展示、项目经历和联系方式。",
-        techs: ["HTML5", "CSS3", "JavaScript"]
+        techs: ["HTML5", "CSS3", "JavaScript"],
+        repoUrl: "https://github.com/xixiayu45-sys/portfolio-project"
     },
     {
-        id: "skill-project-manager",
-        title: "技能与项目管理模块",
-        desc: "基于数组和对象维护页面数据，实现技能新增、删除、重置，以及项目新增、编辑和删除等交互功能。",
-        techs: ["JavaScript", "DOM", "localStorage"]
+        id: "vue-portfolio",
+        title: "Vue 个人作品集",
+        desc: "基于 Vue 3、Vite、Express 和 MySQL 构建个人作品集，使用响应式布局展示个人资料与项目，并通过接口实现项目数据的加载、新增、编辑和删除。",
+        techs: ["Vue 3", "Vite", "JavaScript", "Express", "MySQL"],
+        repoUrl: "https://github.com/xixiayu45-sys/vue-portfolio-project"
     },
     {
-        id: "project-filter-form",
-        title: "项目筛选与留言反馈",
-        desc: "实现按技术栈筛选项目卡片，并完成留言表单校验、提交反馈和删除确认等基础用户体验细节。",
-        techs: ["DOM", "Form", "CSS Grid"]
+        id: "ticketrush",
+        title: "TicketRush 票务活动管理后端",
+        desc: "基于 Spring Boot、MyBatis-Plus 和 MySQL 构建票务活动管理接口，提供活动增删改查、分页查询、库存与时间校验、统一响应和全局异常处理，并持续扩展用户注册与密码加密能力。",
+        techs: ["Java", "Spring Boot", "MyBatis-Plus", "MySQL", "REST API"],
+        repoUrl: "https://github.com/xixiayu45-sys/TicketRush"
     }
 ]
 const savedProjects = localStorage.getItem("portfolioProjects")
 let projects = defaultProjects.slice()
+const PROJECT_DATA_VERSION = "4"
+const PROJECT_DATA_VERSION_KEY = "portfolioProjectDataVersion"
 
 const techFilter = document.querySelector("#techFilter")
 const addProject = document.querySelector("#addProject")
@@ -190,6 +195,62 @@ try {
     localStorage.removeItem("portfolioProjects")
 }
 
+function migrateStoredProjects() {
+    const storedVersion = Number(localStorage.getItem(PROJECT_DATA_VERSION_KEY) || "0")
+    if (storedVersion >= Number(PROJECT_DATA_VERSION)) {
+        return false
+    }
+
+    const savedDefaults = new Map()
+    const customProjects = []
+    const defaultProjectIds = new Set(defaultProjects.map(function (project) {
+        return project.id
+    }))
+    const legacyDefaultProjectIds = new Set(["skill-project-manager", "project-filter-form"])
+
+    projects.forEach(function (project) {
+        if (defaultProjectIds.has(project.id)) {
+            savedDefaults.set(project.id, project)
+            return
+        }
+        if (legacyDefaultProjectIds.has(project.id)) {
+            return
+        }
+        customProjects.push(project)
+    })
+
+    projects = defaultProjects.map(function (project) {
+        const savedProject = savedDefaults.get(project.id)
+        if (savedProject !== undefined) {
+            return savedProject
+        }
+        return {
+            ...project,
+            techs: project.techs.slice()
+        }
+    }).concat(customProjects)
+
+    projects.forEach(function (project) {
+        if (project.repoUrl !== undefined && project.repoUrl !== "") {
+            return
+        }
+
+        const defaultProject = defaultProjects.find(function (defaultItem) {
+            return defaultItem.id === project.id
+        })
+        if (defaultProject !== undefined && defaultProject.repoUrl !== undefined) {
+            project.repoUrl = defaultProject.repoUrl
+        }
+    })
+
+    localStorage.setItem(PROJECT_DATA_VERSION_KEY, PROJECT_DATA_VERSION)
+    return true
+}
+
+if (migrateStoredProjects()) {
+    saveProjects()
+}
+
 /* ========== 7. 项目模块：存储和渲染 ========== */
 function saveProjects() {
     localStorage.setItem("portfolioProjects", JSON.stringify(projects))
@@ -212,6 +273,8 @@ function renderProjects(projectList) {
         const skillNum = createTextElement("p", `使用技术数量：${project.techs.length}`, "project-meta")
         const techsText = project.techs.join("、")
         const textStr = createTextElement("p", `技术栈：${techsText}`, "project-techs-text")
+        const projectLinks = document.createElement("div")
+        projectLinks.classList.add("project-links")
 
         const actions = document.createElement("div")
         actions.classList.add("project-actions")
@@ -229,6 +292,17 @@ function renderProjects(projectList) {
         article.appendChild(desc)
         article.appendChild(skillNum)
         article.appendChild(textStr)
+
+        if (project.repoUrl !== undefined && project.repoUrl !== "") {
+            const repoLink = createTextElement("a", "查看 GitHub 仓库", "project-link")
+            repoLink.href = project.repoUrl
+            repoLink.target = "_blank"
+            repoLink.rel = "noopener noreferrer"
+            repoLink.setAttribute("aria-label", `在新窗口打开 ${project.title} 的 GitHub 仓库`)
+            projectLinks.appendChild(repoLink)
+            article.appendChild(projectLinks)
+        }
+
         article.appendChild(actions)
 
         editButton.addEventListener("click", function () {
